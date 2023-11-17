@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { urlFor } from '../lib/client';
 
 function HeroBanner({HeroBanner}) {
-  console.log(HeroBanner);
   return (
     <div className='hero-banner-container'>
       <div>
@@ -19,7 +18,6 @@ function HeroBanner({HeroBanner}) {
             <h5>Description</h5>
             <p>{HeroBanner.desc}</p>
           </div>
-
         </div>
       </div>
     </div>
