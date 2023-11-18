@@ -5,11 +5,14 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
+import { useStateContext } from '../../context/StateContext';
 
 import { Product } from "../../components";
 import { client, urlFor } from "../../lib/client";
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
+
+  const {decQty,incQty,qty,onAdd,setShowCart} = useStateContext()
 
   const [index, setIndex] = useState(0);
 
@@ -58,13 +61,13 @@ const ProductDetails = ({ product, products }) => {
           <div className='quantity'>
             {" "}
             <p className='quantity-desc'>
-              <span className='minus' onClick=''>
+              <span className='minus' onClick={decQty}>
                 <AiOutlineMinus />
               </span>
               <span className='num' onClick=''>
-                0
+                {qty}
               </span>
-              <span className='plus' onClick=''>
+              <span className='plus' onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
